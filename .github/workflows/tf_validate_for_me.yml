@@ -81,7 +81,7 @@
 #           cat cost_policy_result.txt >> $GITHUB_STEP_SUMMARY
 #         fi
 
-name: Validate Terraform
+name: Validate Terraform For Me
 
 on:
   workflow_dispatch:
