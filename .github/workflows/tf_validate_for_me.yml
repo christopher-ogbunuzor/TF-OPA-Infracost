@@ -141,6 +141,7 @@ jobs:
           curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
           chmod 755 ./opa
           sudo mv opa /usr/local/bin/
+          echo "opa version: `opa version`"
 
       - name: Generate Infracost JSON Output
         run: |
