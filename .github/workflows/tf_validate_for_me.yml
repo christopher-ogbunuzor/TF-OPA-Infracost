@@ -157,10 +157,14 @@ jobs:
           cat cost_policy_result.txt
           echo "tags summary"
           cat tags_policy_result.txt
-
-          if [[ -s tags_policy_result.txt || -s cost_policy_result.txt ]]; then 
+          if [[ (-s tags_policy_result.txt && $(cat tags_policy_result.txt) != "[]" ) || (-s cost_policy_result.txt && $(cat cost_policy_result.txt) != "[]") ]]; then 
             exit 1
           fi
+
+
+          # if [[ -s tags_policy_result.txt || -s cost_policy_result.txt ]]; then 
+          #   exit 1
+          # fi
 
       - name: Add policy results to job summary
         if: failure()

@@ -8,7 +8,7 @@ resource "aws_instance" "example" {
 
   tags = {
     Name = "example-instance"
-   
+    env  = "development"
     team = "example-team"
   }
 }
